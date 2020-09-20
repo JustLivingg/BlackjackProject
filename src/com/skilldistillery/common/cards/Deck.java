@@ -7,10 +7,11 @@ import java.util.List;
 public class Deck {
 	// Create a class that holds a List of cards.
 	private List<Card> cards; // List of cards
-
+	private int nextCardIndex;
 	//Intializing list with 52 cards.
 	public Deck() {
 		cards = createDeck();
+		nextCardIndex = 0;
 	}
 
 	//Method that passes the list of cards and adds to deck.
@@ -35,5 +36,12 @@ public class Deck {
 	public Card dealCard() {
 		return cards.remove(0);
 	}
+	
+	public Card nextCard() {
 
+		if (nextCardIndex < 0 || nextCardIndex > 51) {
+			System.out.println("Future exception goes here");
+		}
+		return cards[nextCardIndex++];
+	}
 }

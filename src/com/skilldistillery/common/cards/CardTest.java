@@ -37,5 +37,6 @@ public class CardTest {
 			// TODO Auto-generated catch block
 			System.out.println("Please enter a number: ");
 		}
+		System.out.println();
 	}
 }
