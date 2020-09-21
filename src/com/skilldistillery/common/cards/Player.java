@@ -34,11 +34,6 @@ public class Player {
 		hand.clearHand();
 	}
 
-	public void addCard1(Card nextCard) {
-		// TODO Auto-generated method stub
-		
-	}
-
 
 
 }

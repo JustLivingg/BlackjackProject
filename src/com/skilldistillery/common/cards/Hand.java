@@ -1,10 +1,7 @@
 package com.skilldistillery.common.cards;
-import java.io.Serializable;
 
-import Card;
 
-public class Hand implements Serializable
-{
+public class Hand  {
 
 	private Card[] theHand = new Card[12];
 
@@ -45,13 +42,13 @@ public class Hand implements Serializable
 				int value = theHand[i].getValue();
 				String valueName;
 				if (value > 10) {
-					valueName = theHand[i].getValueName\().substring(0, 1);
+					valueName = theHand[i].getValueName().substring(0, 1);
 				} else if ( value == 1 ){
 					valueName = "A";
 				} else {
 					valueName = Integer.toString(value);
 				}
-						str += " " +valueName + theHand[i].getSuitDesignator();
+						str += " " +valueName + theHand[i];
 				if (value > 10) {
 					value = 10;
 				} else if ( value == 1) {
@@ -83,4 +80,5 @@ public class Hand implements Serializable
 		int value = theHand[1].getValue();
 		return value == 1 || value >= 10;
 	}
-} //End class
+} 
+

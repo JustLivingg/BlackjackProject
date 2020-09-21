@@ -1,51 +1,37 @@
 package com.skilldistillery.common.cards;
 
-import java.util.Scanner;
-
 public class PlayBlackjack {
-	private Dealer dealer = new Dealer();
-	private Blackjack play = new Blackjack();
-	private static Scanner kb = new Scanner(System.in);
 
 	public static void main(String[] args) {
 
 		Dealer dealer = new Dealer();
 		Blackjack play = new Blackjack();
-		
-		boolean keepGoing = true;
-		while (keepGoing) {
-			System.out.println("Welcome to SD Casino. The game is Blackjack.");
-			System.out.println("Please pick from the following menu below.");
-			System.out.println();
-			System.out.println();
-			printMenu();
-			int choice = kb.nextInt();
 
-			switch (choice) {
-			case 1:
-//				Method to print out rules.
-				dealer.displayRules();
-				break;
-			case 2:
-				dealer.playBlackjack();
-			case 3:
-				System.out.println("Quit.");
-				keepGoing = false;
-				break;
-			}
+		displayRules();
 
-		}
+		play.playGame();
+		play.shuffle();
+		play.dealCards();
+		play.displayHands();
+//		play.checkBlackjack();
+//		play.hitOrStay();
+//		play.dealersTurn();
 
 	}
-	
-	public static void printMenu() {
-		System.out.println("================== MENU =================");
-		System.out.println("|   1. Display rules.                   |");
-		System.out.println("|   2. Play Blackjack.                  |");
-		System.out.println("|   3. Quit.                            |");
-		System.out.println("=========================================");
+
+	public static void displayRules() {
+
+		System.out.println("Blackjack Rules");
 		System.out.println();
-		
+		System.out.println("Each player is dealt 2 cards, and the dealer is dealt one card face-up and down.");
+		System.out.println("Cards are equal exactly to their value with face cards being 10 and Ace being 11.");
+		System.out.println("The players cards are added up for their total.");
+		System.out.println("Player(s) 'hit' to gain another card from the deck, or 'stay' at their current total. ");
+		System.out.println("Dealer has a set of rules that they follow, they will 'hit' until 17, or 'stay'.");
+		System.out.println("The goal is to have a higher card total than the dealer without going over 21.");
+		System.out.println("Getting 21 on your first two cards is called Blackjack.");
+		System.out.println();
+		System.out.println();
 	}
 
 }

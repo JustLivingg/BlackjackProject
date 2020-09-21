@@ -37,11 +37,15 @@ public class Deck {
 		return cards.remove(0);
 	}
 	
-	public Card nextCard() {
 
-		if (nextCardIndex < 0 || nextCardIndex > 51) {
-			System.out.println("Future exception goes here");
-		}
-		return cards[nextCardIndex++];
-	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

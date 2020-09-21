@@ -39,9 +39,9 @@ public class Blackjack {
 
 		for (int j = 0; j < 2; j++) {
 			for (int i = 0; i < users; i++) {
-				player[i].addCard(deck.nextCard());
+				player[i].addCard(deck.dealCard());
 			}
-			dealer.addCard(deck.nextCard());
+			dealer.addCard(deck.dealCard());
 
 		}
 	}
@@ -86,7 +86,7 @@ public class Blackjack {
 					c = play.toUpperCase().charAt(0);
 				} while (!(c == 'H' || c == 'S'));
 				if (c == 'H') {
-					player[i].addCard(deck.nextCard());
+					player[i].addCard(deck.dealCard());
 					System.out.println(player[i].getName() + " has " + player[i].getHandString());
 					if (player[i].getTotal() > 21 ) {
 						System.out.println("You have busted. Better luck next time.");
